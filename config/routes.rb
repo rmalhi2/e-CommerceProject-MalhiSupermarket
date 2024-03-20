@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'products/show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  root 'about#index'
+  root 'home#index'
+
   get 'about', to: 'about#index'
   resources :products, only: [:index, :show]
   resources :categories, only: [:show, :index]
