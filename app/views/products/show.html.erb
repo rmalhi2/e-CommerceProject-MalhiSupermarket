@@ -1,6 +1,16 @@
-<h1><%= @product.product_name %></h1>
-<p><strong>Description:</strong> <%= @product.product_description %></p>
-<p><strong>Price:</strong> <%= number_to_currency(@product.product_price) %></p>
-<p><strong>Quantity Available:</strong> <%= @product.quantity_available %></p>
-<p><strong>Category:</strong> <%= @product.category.category_name %></p>
-<%= link_to "Back to Products", products_path, class: "btn btn-primary" %>
+<div class="container">
+  <h1 class="text-center"><%= @product.product_name %></h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text"><strong>Description:</strong> <%= @product.product_description %></p>
+          <p class="card-text"><strong>Price:</strong> <%= number_to_currency(@product.product_price) %></p>
+          <p class="card-text"><strong>Quantity Available:</strong> <%= @product.quantity_available %></p>
+          <p class="card-text"><strong>Category:</strong> <%= @product.category.category_name %></p>
+          <%= link_to "Back to Products", products_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
