@@ -1,4 +1,11 @@
 <h1 class="text-center">Products</h1>
+
+<%= form_tag(products_path, method: "get", class: "form-inline my-2 my-lg-0") do %>
+  <%= text_field_tag(:keyword, params[:keyword], class: "form-control mr-sm-2", placeholder: "Search by keyword") %>
+  <%= select_tag(:category_id, options_for_select(Category.all.map { |c| [c.category_name, c.id] }, params[:category_id]), { include_blank: true, class: "form-control mr-sm-2" }) %>
+  <%= submit_tag("Search", class: "btn btn-outline-success my-2 my-sm-0") %>
+<% end %>
+
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-md-4 mb-4">
@@ -15,4 +22,6 @@
   <% end %>
 </div>
 
-<%= paginate @products %>
+<div class="d-flex justify-content-center mt-4">
+  <%= paginate @products %>
+</div>
