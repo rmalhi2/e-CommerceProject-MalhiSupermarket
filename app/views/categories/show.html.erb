@@ -1,2 +1,21 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1 class="text-center"><%= @category.category_name %> Products</h1>
+<div class="container">
+  <div class="row">
+    <% @category.products.each do |product| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= product.product_name %></h5>
+            <p class="card-text">Price: <%= number_to_currency(product.product_price) %></p>
+            <%= link_to "View Details", product_path(product), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <%= link_to "Back to Products", products_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
