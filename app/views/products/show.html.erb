@@ -8,8 +8,8 @@
           <p class="card-text"><strong>Price:</strong> <%= number_to_currency(@product.product_price) %></p>
           <p class="card-text"><strong>Quantity Available:</strong> <%= @product.quantity_available %></p>
           <p><strong>Category:</strong> <%= link_to @product.category.category_name, category_path(@product.category) %></p>
-          
-          <%= link_to "Back to Products", products_path, class: "btn btn-primary" %>
+
+          <%= link_to "Back", :back , class: "btn btn-primary" %>
         </div>
       </div>
     </div>
