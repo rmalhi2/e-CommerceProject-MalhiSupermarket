@@ -153,3 +153,4 @@ grocery_categories.each do |category_name|
 end
 
 puts "Seed data generated successfully!"
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
