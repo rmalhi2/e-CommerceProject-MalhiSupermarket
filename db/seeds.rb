@@ -70,7 +70,13 @@ products_data = {
     { name: "Melody Toffees", description: "Creamy and smooth toffees with a delicious chocolate filling, a nostalgic favorite for many.", price: 1.25, quantity: 25 },
     { name: "Eclairs", description: "Cream-filled toffees with a smooth and creamy center, covered in a layer of caramel and chocolate.", price: 1.75, quantity: 35 },
     { name: "Cadbury Dairy Milk", description: "Creamy and indulgent milk chocolate bars with a rich and velvety texture, a classic favorite.", price: 2.49, quantity: 45 },
-    { name: "Cadbury Gems", description: "Colorful candy-coated chocolate buttons, fun to eat and perfect for decorating desserts.", price: 1.49, quantity: 55 }
+    { name: "Cadbury Gems", description: "Colorful candy-coated chocolate buttons, fun to eat and perfect for decorating desserts.", price: 1.49, quantity: 55 },
+    { name: "Nestle KitKat", description: "Crispy wafer fingers coated in smooth milk chocolate, perfect for a break time snack.", price: 1.99, quantity: 75 },
+    { name: "Amul Dark Chocolate", description: " Rich and intense dark chocolate bars with a hint of bitterness, perfect for dark chocolate lovers.", price: 2.49, quantity: 35 },
+    { name: "Mango Bite", description: "Soft and chewy toffees with the tropical flavor of ripe mangoes, a refreshing sweet treat.", price: 4.49, quantity: 65 },
+    { name: "Kismi Bar", description: "Chewy toffee bars coated in a layer of rich chocolate, combining the best of both worlds.", price: 1.99, quantity: 25 },
+    { name: "Kurkure Puffcorn", description: " Crunchy and puffy corn snacks with a savory masala flavor, perfect for munching anytime.", price: 1.75, quantity: 56 },
+    { name: "Bingo Tedhe Medhe", description: "Crispy and twisted corn snacks with a spicy and tangy flavor, a favorite among snack lovers.", price: 1.99, quantity: 25 }
 
     
   ],
@@ -103,12 +109,32 @@ products_data = {
     
   ],
   "Grains" => [
-    { name: "Basmati Rice", description: "Long-grain Basmati rice", price: 4.99, quantity: 80 },
-    { name: "Organic Quinoa", description: "Premium organic quinoa", price: 6.99, quantity: 60 },
+    { name: "Basmati Rice", description: "Long-grain aromatic rice known for its delicate flavor and fluffy texture, commonly used in Indian and Middle Eastern cuisine.", price: 4.99, quantity: 80 },
+    { name: "Organic Quinoa", description: "Nutrient-rich pseudo-cereal with a light, fluffy texture and slightly nutty flavor, known for its high protein content and versatility in cooking.", price: 6.99, quantity: 60 },
     { name: "Steel-cut Oats", description: "Nutritious steel-cut oats", price: 3.49, quantity: 70 },
     { name: "Whole Wheat Flour", description: "Nutty whole wheat flour", price: 4.49, quantity: 65 },
-    { name: "Brown Rice", description: "Healthy brown rice grains", price: 5.99, quantity: 75 },
-    # Add more grain products here
+    { name: "Brown Rice", description: "Whole grain rice with the outer bran layer intact, offering a nutty flavor and chewy texture, higher in fiber and nutrients compared to white rice.", price: 5.99, quantity: 75 },
+    { name: "Barley", description: "Nutty and chewy whole grain barley, versatile in soups, salads, and pilafs, known for its high fiber content and nutty flavor.", price: 2.99, quantity: 75 },
+    { name: "Millet", description: " Small, round grains with a mild flavor and slightly crunchy texture, used as a gluten-free alternative to rice or couscous in various dishes.", price: 3.99, quantity: 70 },
+    { name: "Rice Paper", description: "Thin, translucent sheets made from rice flour and water, used to wrap spring rolls, dumplings, and other Asian delicacies.", price: 3.99, quantity: 35 },
+    { name: "Rice Noodles", description: "Thin noodles made from rice flour and water, versatile in Asian cooking for stir-fries, soups, and salads.", price: 1.99, quantity: 45 },
+    { name: "Instant Rice", description: "Pre-cooked and dehydrated rice that can be rehydrated quickly with boiling water, convenient for quick meals and camping trips.", price: 4.99, quantity: 55 },
+    { name: "Amaranth", description: "Tiny grains with a peppery flavor and sticky texture when cooked, packed with protein, fiber, and micronutrients, used in porridge, pilafs, and baking.", price: 4.99, quantity: 50 },
+    { name: "Buckwheat Groats", description: "Nutty and earthy-tasting whole grains with a triangular shape, commonly used in Eastern European and Asian cuisines for pilafs, salads, and porridge.", price: 5.49, quantity: 35 },
+    { name: "Sorghum", description: "Gluten-free whole grain with a mild and slightly sweet flavor, used in porridge, pilafs, salads, and as a flour substitute in baking.", price: 2.99, quantity: 15 },
+    { name: "Ragi Flour (Finger Millet Flour)", description: "Nutrient-dense flour made from finger millet grains, gluten-free and rich in calcium, used in Indian cooking for making rotis, dosas, and porridge.", price: 3.49, quantity: 27 },
+    { name: "Chia Seeds", description: "Tiny seeds packed with omega-3 fatty acids, fiber, and protein, used in smoothy or oats.", price: 4.00, quantity: 55 },
+    { name: "Bajra (Pearl Millet)", description: "Nutritious millet commonly used in Indian cuisine, known for its versatility and rich flavor. Often used to make roti (flatbread), khichdi, and porridge.", price: 2.49, quantity: 15 },
+    { name: "Singhara (Water Chestnut)", description: "Starchy tuber used in Indian cuisine, particularly during fasting days. Ground into flour and used to make puris, parathas, and sweets.", price: 6.49, quantity: 55 },
+    { name: "Makki (Maize)", description: "Coarse cornmeal used in Indian cooking, particularly in the form of makki ki roti (maize flour flatbread). Commonly served with sarson ka saag (mustard greens).", price: 2.99, quantity: 55 },
+    { name: "Varagu (Kodo Millet)", description: "Small-grained millet commonly used in South Indian cuisine. Used to make varagu idli, dosa, and upma. Rich in dietary fiber and nutrients.", price: 4.40, quantity: 23 },
+    { name: "Chana Dal (Split Bengal Gram)", description: "Split and husked chickpeas commonly used in Indian cooking. Rich in protein and fiber, often used to make dal (lentil soup), snacks, and sweets.", price: 3.49, quantity: 18 },
+    { name: "Moong Dal (Split Mung Beans)", description: "Split and husked mung beans used in various Indian dishes, including dal, khichdi, and desserts. High in protein and easy to digest.", price: 2.99, quantity: 20 },
+    { name: "Toor Dal (Split Pigeon Peas)", description: "Split and skinned pigeon peas used in dal, sambar, and rasam. Known for their rich flavor and nutritional value.", price: 3.99, quantity: 21 },
+    { name: "Besan (Chickpea Flour)", description: "Ground flour made from chickpeas, commonly used in Indian cuisine to make pakoras, bhajis, and sweets like besan ladoo. Gluten-free and versatile.", price: 2.49, quantity: 31 },
+    { name: "Sooji (Semolina)", description: "Coarse flour made from durum wheat, used to make various Indian dishes like upma, halwa, and desserts. Offers a nutty flavor and grainy texture.", price: 1.99, quantity: 28 },
+    { name: "Cornmeal", description: "Coarsely ground corn kernels, used in traditional Indian and Mexican cuisine for making cornbread, polenta, tortillas, and other dishes.", price: 1.79, quantity: 45 }
+   
   ]
 }
 
