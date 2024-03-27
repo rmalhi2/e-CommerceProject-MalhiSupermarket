@@ -1,0 +1,17 @@
+<h1>Shopping Cart</h1>
+
+<% if session[:cart].present? %>
+  <ul>
+    <% session[:cart].each do |product_id, quantity| %>
+      <li>
+        <% product = Product.find(product_id) %>
+        <strong>Product Name:</strong> <%= product.product_name %><br>
+        <strong>Price:</strong> <%= number_to_currency(product.product_price) %><br>
+        <strong>Quantity:</strong> <%= quantity %>
+    
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Your shopping cart is empty.</p>
+<% end %>

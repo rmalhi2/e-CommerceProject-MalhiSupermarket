@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   get '/about', to: 'about_pages#show'
   get '/contact', to: 'contact_pages#show'
 
+  # post '/add_to_cart', to: 'cart#add_to_cart'
+  get '/view_cart', to: 'cart#view_cart'
+  delete '/remove_from_cart/:id', to: 'cart#remove_from_cart', as: 'remove_from_cart'
+  post '/add_to_cart', to: 'cart#add_to_cart', as: 'add_to_cart'
+
+
 
   get 'about', to: 'about#index'
   resources :products, only: [:index, :show]

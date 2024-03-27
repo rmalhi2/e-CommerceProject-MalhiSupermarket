@@ -16,7 +16,8 @@
               <%= link_to product.product_name, product_path(product) %>
             </h5>
             <p class="card-text">Price: <%= number_to_currency(product.product_price) %></p>
-            <%= link_to "Add to Cart", "#", class: "btn btn-primary" %>
+            <%= button_to "Add to Cart", add_to_cart_path(product_id: product.id), method: :post, remote: true, class: "btn btn-primary", form_class: "form-inline", params: { redirect_path: view_cart_path } %>
+
           </div>
         </div>
       </div>
