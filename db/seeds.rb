@@ -194,4 +194,4 @@ ContactPage.create!(
 )
 
 puts "Seed data generated successfully!"
-AdminUser.create!(email: 'newadmin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'newadmin2@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
