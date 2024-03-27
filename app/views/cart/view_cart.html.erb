@@ -11,11 +11,12 @@
 
             <%= form_tag update_cart_path(product_id), method: :patch, class: "form-inline" do %>
                 <%= hidden_field_tag :product_id, product_id %>
-                <%= number_field_tag "quantity[#{product_id}]", quantity, class: "form-control mr-2" %>
+                <label for="quantity_<%= product_id %>" class="mr-2"><strong>Quantity:</strong></label>
+                <%= number_field_tag "quantity[#{product_id}]", quantity, class: "form-control mr-2", id: "quantity_#{product_id}" %>
                 <%= submit_tag "Update", class: "btn btn-primary btn-sm mr-2" %>
             <% end %>
 
-          <%= button_to "Remove from Cart", remove_from_cart_path(product_id), method: :delete, class: "btn btn-danger btn-sm" %>
+          <%= button_to "Remove from Cart", remove_from_cart_path(product_id), method: :delete, class: "btn btn-danger btn-sm mt-2" %>
         </li>
       <% end %>
     </ul>
