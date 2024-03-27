@@ -152,5 +152,26 @@ grocery_categories.each do |category_name|
   end
 end
 
+# db/seeds.rb
+
+# Seed data for AboutPage
+AboutPage.create!(
+  title: "About Us",
+  paragraph1: "Malhi Supermarket, located at 350 Madison St, Winnipeg, Manitoba, is a well-established Indian grocery store. It was established in 2003. With over 20 years of experience, Malhi Supermarket has won the trust of the local community by providing excellent quality and customer service, which is why it is the most visited and successful Indian grocery store in the city.",
+  paragraph2: "Behind the success of Malhi Supermarket is a dedicated team of 18 employees who share our passion for delivering exceptional service. From the knowledgeable staff to their friendly cashiers, each member of the team is committed to ensuring that every customer leaves the store satisfied.",
+  paragraph3: "Malhi Supermarket specializes in providing a wide range of Indian grocery products from various renowned Indian brands. From spices, grains, lentils, condiments, snacks, beverages, to houseware products, the store sells it all.",
+  paragraph4: "Currently, Malhi Supermarket operates as a physical store where customers can visit and purchase groceries in person. But now they are looking forward to diving into online business as well by having an e-commerce site where customers can purchase the grocery products online. The aim of the website would be to make shopping easier and more accessible for the customers. The e-commerce site will primarily focus on offering a diverse range of food items, including spices, grains, lentils, condiments, snacks, and beverages.",
+  paragraph5: "The target demographic for the online store includes the Indian community residing in Winnipeg and surrounding areas. Additionally, the store aims to attract individuals interested in Indian cuisine and products, including both local customers and those looking for specific Indian grocery items."
+)
+
+# Seed data for ContactPage
+ContactPage.create!(
+  title: "Contact Us",
+  phone: "123-456-7890",
+  email: "info@malhisupermarket.com",
+  address: "350 Madison St, Winnipeg, Manitoba"
+)
+
+
 puts "Seed data generated successfully!"
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_26_221225) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_27_065857) do
+  create_table "about_pages", force: :cascade do |t|
+    t.string "title"
+    t.text "paragraph1"
+    t.text "paragraph2"
+    t.text "paragraph3"
+    t.text "paragraph4"
+    t.text "paragraph5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -39,6 +50,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_26_221225) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contact_pages", force: :cascade do |t|
+    t.string "title"
+    t.string "phone"
+    t.string "email"
+    t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
