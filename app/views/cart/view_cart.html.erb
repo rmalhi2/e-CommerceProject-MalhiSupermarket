@@ -5,10 +5,16 @@
     <ul class="list-group">
       <% session[:cart].each do |product_id, quantity| %>
         <li class="list-group-item">
-          <% product = Product.find(product_id) %>
-          <h5 class="mb-1"><strong>Product Name:</strong> <%= product.product_name %></h5>
-          <p class="mb-1"><strong>Price:</strong> <%= number_to_currency(product.product_price) %></p>
-          <p class="mb-1"><strong>Quantity:</strong> <%= quantity %></p>
+            <% product = Product.find(product_id) %>
+            <h5 class="mb-1"><strong>Product Name:</strong> <%= product.product_name %></h5>
+            <p class="mb-1"><strong>Price:</strong> <%= number_to_currency(product.product_price) %></p>
+
+            <%= form_tag update_cart_path(product_id), method: :patch, class: "form-inline" do %>
+                <%= hidden_field_tag :product_id, product_id %>
+                <%= number_field_tag "quantity[#{product_id}]", quantity, class: "form-control mr-2" %>
+                <%= submit_tag "Update", class: "btn btn-primary btn-sm mr-2" %>
+            <% end %>
+
           <%= button_to "Remove from Cart", remove_from_cart_path(product_id), method: :delete, class: "btn btn-danger btn-sm" %>
         </li>
       <% end %>
