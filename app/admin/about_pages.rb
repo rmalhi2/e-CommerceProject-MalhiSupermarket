@@ -1,18 +1,15 @@
 ActiveAdmin.register AboutPage do
+  permit_params :title, :paragraph1, :paragraph2, :paragraph3, :paragraph4, :paragraph5
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :title, :paragraph1, :paragraph2, :paragraph3, :paragraph4, :paragraph5
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :paragraph1, :paragraph2, :paragraph3, :paragraph4, :paragraph5]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+  form do |f|
+    f.inputs "About Page Details" do
+      f.input :title
+      f.input :paragraph1
+      f.input :paragraph2
+      f.input :paragraph3
+      f.input :paragraph4
+      f.input :paragraph5
+    end
+    f.actions
+  end
 end
