@@ -11,4 +11,8 @@ ActiveAdmin.register Product do
     end
     f.actions
   end
+
+  action_item :view_site do
+    link_to "Back to Home Page", root_path
+  end
 end

@@ -34,6 +34,6 @@ ActiveAdmin.register_page "Dashboard" do
   end # content
 
   action_item :view_site do
-    link_to "Back", root_path
+    link_to "Back to Home Page", root_path
   end
 end

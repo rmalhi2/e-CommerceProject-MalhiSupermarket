@@ -16,6 +16,10 @@ ActiveAdmin.register Category do
   # end
 
   permit_params :category_name
+  
+  action_item :view_site do
+    link_to "Back to Home Page", root_path
+  end
 
   index do
     selectable_column
