@@ -1,0 +1,57 @@
+product_name,description,price,quantity,category_name
+Whole Milk,"Fresh whole milk",3.99,50,Dairy
+Cheddar Cheese,"Sharp cheddar cheese block",5.49,30,Dairy
+Greek Yogurt,"Creamy Greek yogurt",2.99,40,Dairy
+Butter,"Unsalted butter",4.49,60,Dairy
+Heavy Cream,"Rich heavy cream",6.99,45,Dairy
+Fresh Milk,"Organic fresh milk from grass-fed cows",3.99,40,Dairy
+Flavored Yogurt,"Fruit-flavored yogurt with real fruit chunks.",1.99,20,Dairy
+Cottage Cheese,"Low-fat cottage cheese with a smooth texture.",4.29,20,Dairy
+Almond Milk,"Dairy-free almond milk enriched with vitamins.",3.49,25,Dairy
+Whipped Cream,"Light and fluffy whipped cream for desserts.",2.29,22,Dairy
+Mozzarella Cheese,"Fresh mozzarella cheese perfect for pizzas.",5.99,15,Dairy
+Butter,"Creamy and rich butter made from natural ingredients.",4.79,20,Dairy
+Ghee,"Clarified butter with a nutty flavor.",6.99,20,Dairy
+Cheddar Cheese,"Sharp cheddar cheese perfect for snacking.",4.49,25,Dairy
+Paneer,"Fresh Indian cottage cheese used in various Indian dishes like palak paneer and paneer tikka.",4.29,20,Dairy
+Rabri,"Sweet, creamy dessert made from condensed milk, sugar, and cardamom, often garnished with nuts.",4.99,10,Dairy
+Dahi,"Indian-style yogurt, typically thicker and tangier than Western yogurt, used in curries, marinades, and as a side dish.",2.99,20,Dairy
+Kulfi,"Creamy Indian ice cream flavored with cardamom, saffron, pistachios, or other ingredients, often served on a stick.",3.49,30,Dairy
+Khoya,"Thickened milk solids used in making sweets like gulab jamun, barfi, and peda.",4.79,23,Dairy
+Potato Chips,"Classic salted potato chips",1.99,60,Snacks
+Peanuts,"Roasted and salted peanuts",2.49,50,Snacks
+Chocolate Bar,"Smooth milk chocolate bar",1.49,70,Snacks
+Trail Mix,"Assorted nuts and dried fruits",3.99,40,Snacks
+Popcorn,"Buttery microwave popcorn",2.29,55,Snacks
+Aloo Bhujia,"Crunchy, savory snack made from mashed potatoes, chickpea flour, and spices.",3.99,50,Snacks
+Mathri,"Crunchy, savory crackers made with flour, spices, and sometimes seeds.",3.50,50,Snacks
+Poha,"Flattened rice cooked with onions, peanuts, curry leaves, and spices, a light and flavorful snack.",5.29,40,Snacks
+Fafda,"Crispy, deep-fried gram flour strips, typically enjoyed with spicy green chutney.",2.29,30,Snacks
+Masala Peanuts,"Peanuts coated in a spicy masala mixture and deep-fried until crunchy.",3.99,35,Snacks
+Chivda,"Indian snack mix made with flattened rice, peanuts, spices, and dried fruits.",4.50,55,Snacks
+Bhel Puri,"Indian street food made with puffed rice, vegetables, tangy tamarind sauce, and spices.",2.00,70,Snacks
+Pani Puri,"Small, round, hollow puris filled with spicy tamarind water, chickpeas, potatoes, and spices.",6.29,25,Snacks
+Parle-G,"India's favorite tea biscuit, known for its iconic taste and affordable price.",1.99,60,Snacks
+Good Day,"Crispy, buttery biscuits with a hint of sweetness, perfect for tea time.",2.49,65,Snacks
+Hide and Seek,"Chocolate-filled biscuits with a crunchy texture, loved by kids and adults alike.",2.99,65,Snacks
+Kurkure Masala Munch,"Spicy and tangy corn puffs with a crunchy texture, bursting with flavor.",1.75,55,Snacks
+Bingo Mad Angles,"Triangular corn chips with a unique texture and spicy flavor, an addictive snack.",2.99,65,Snacks
+Uncle Chipps,"Classic potato chips with a rustic, homemade taste that's loved by all generations.",2.25,45,Snacks
+Lays Magic Masala,"Potato chips with a spicy and tangy masala seasoning, a popular choice for snack time.",3.25,67,Snacks
+Parle 20-20,"Crunchy biscuits with a mix of sweet and salty flavors, perfect for munching.",1.99,50,Snacks
+Melody Toffees,"Creamy and smooth toffees with a delicious chocolate filling, a nostalgic favorite for many.",1.25,25,Snacks
+Eclairs,"Cream-filled toffees with a smooth and creamy center, covered in a layer of caramel and chocolate.",1.75,35,Snacks
+Cadbury Dairy Milk,"Creamy and indulgent milk chocolate bars with a rich and velvety texture, a classic favorite.",2.49,45,Snacks
+Basmati Rice,"Long-grain aromatic rice",10.99,100,Grains
+Quinoa,"Nutritious whole grain with a slightly nutty flavor",8.99,80,Grains
+Oats,"Whole grain oats, perfect for breakfast or baking",4.99,120,Grains
+Brown Rice,"Nutritious whole grain rice with a chewy texture",6.49,90,Grains
+Couscous,"Small steamed balls of crushed durum wheat, a staple in North African cuisine",3.99,70,Grains
+Barley,"Hearty whole grain with a chewy texture, great for soups and stews",5.49,60,Grains
+Buckwheat,"Nutty whole grain with a distinct flavor, commonly used in pancakes and porridge",7.99,50,Grains
+Millet,"Small, round whole grain with a mild flavor, often used in gluten-free baking",6.99,45,Grains
+Farro,"Ancient whole grain with a nutty flavor and chewy texture, perfect for salads and risottos",9.49,40,Grains
+Polenta,"Cornmeal boiled into a porridge, commonly served as a side dish or used in baking",3.49,55,Grains
+Cumin,"Aromatic spice with a warm, earthy flavor, commonly used in Indian and Middle Eastern cuisine",2.99,150,Spices
+Coriander,"Citrusy and slightly sweet spice, used in both ground and seed form in various cuisines",3.49,140,Spices
+
