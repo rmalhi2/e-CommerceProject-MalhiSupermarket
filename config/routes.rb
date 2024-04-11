@@ -21,6 +21,14 @@ Rails.application.routes.draw do
   patch '/update_cart/:id', to: 'cart#update_cart', as: 'update_cart'
 
 
+  # resources :orders
+  
+  resources :orders, only: [:new, :create, :show]
+
+
+  post 'orders/:id/confirm', to: 'orders#confirm_order', as: 'confirm_order'
+
+
   # devise_for :users
   get '/account', to: 'account#index'
   patch '/account/update_address', to: 'account#update_address', as: 'update_address'

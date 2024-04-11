@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Invoice</h1>
+  <div class="card">
+    <div class="card-body">
+      
+      <p><strong>Address:</strong> <%= @order.user.address %></p>
+      <p><strong>City:</strong> <%= @order.user.city %></p>
+      <p><strong>Province:</strong> <%= @order.user.province.name if @order.user.province %></p>
+    </div>
+  </div>
+  <hr>
+  <h2 class="mt-4 mb-3">Items</h2>
+  <% @order.order_items.each do |item| %>
+    <div class="card mb-2">
+      <div class="card-body">
+        <h5 class="card-title"><%= item.product.product_name %> - Quantity: <%= item.quantity %></h5>
+        <p class="card-text">Price: <%= number_to_currency(item.price) %></p>
+      </div>
+    </div>
+  <% end %>
+  <div class="card my-4">
+    <div class="card-body">
+      <p class="h5"><strong>Subtotal:</strong> <%= number_to_currency(@order.subtotal) %></p>
+      <p class="h5"><strong>Taxes:</strong> <%= number_to_currency(@order.calculate_taxes) %></p>
+      <p class="h5"><strong>Total:</strong> <%= number_to_currency(@order.total) %></p>
+    </div>
+  </div>
+  <%= form_with url: confirm_order_path(@order), method: :post do %>
+    <%= submit_tag "Place Order", class: "btn btn-success" %>
+  <% end %>
+</div>

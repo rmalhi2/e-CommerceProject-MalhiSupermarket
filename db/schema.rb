@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_04_215349) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_11_165104) do
   create_table "about_pages", force: :cascade do |t|
     t.string "title"
     t.text "paragraph1"
@@ -63,6 +63,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_04_215349) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "product_id", null: false
+    t.integer "quantity"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.decimal "total"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "shipping_address"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.text "product_description"
@@ -78,6 +99,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_04_215349) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "gst"
+    t.decimal "pst"
+    t.decimal "hst"
   end
 
   create_table "users", force: :cascade do |t|
@@ -97,6 +121,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_04_215349) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "users", "provinces"
 end

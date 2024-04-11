@@ -194,4 +194,18 @@ ContactPage.create!(
 )
 
 puts "Seed data generated successfully!"
-AdminUser.create!(email: 'newadmin2@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+# Update tax rates for provinces
+Province.find_by(name: "Alberta").update(gst: 5, pst: 0, hst: nil)
+Province.find_by(name: "British Columbia").update(gst: 5, pst: 7, hst: nil)
+Province.find_by(name: "Manitoba").update(gst: 5, pst: 7, hst: nil)
+Province.find_by(name: "New Brunswick").update(gst: nil, pst: nil, hst: 15)
+Province.find_by(name: "Newfoundland and Labrador").update(gst: nil, pst: nil, hst: 15)
+Province.find_by(name: "Nova Scotia").update(gst: nil, pst: nil, hst: 15)
+Province.find_by(name: "Ontario").update(gst: nil, pst: nil, hst: 13)
+Province.find_by(name: "Prince Edward Island").update(gst: nil, pst: nil, hst: 15)
+Province.find_by(name: "Quebec").update(gst: 5, pst: 9.975, hst: nil)
+Province.find_by(name: "Saskatchewan").update(gst: 5, pst: 6, hst: nil)
+
+puts "Tax rates updated."
+AdminUser.create!(email: 'newadmin3@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
