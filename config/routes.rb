@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'home/index'
@@ -20,6 +21,11 @@ Rails.application.routes.draw do
   patch '/update_cart/:id', to: 'cart#update_cart', as: 'update_cart'
 
 
+  # devise_for :users
+  get '/account', to: 'account#index'
+  patch '/account/update_address', to: 'account#update_address', as: 'update_address'
+
+  get '/users/sign_out', to:'account#sign_out'
 
   get 'about', to: 'about#index'
   resources :products, only: [:index, :show]

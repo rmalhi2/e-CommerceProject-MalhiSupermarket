@@ -1,4 +1,7 @@
 class CartController < ApplicationController
+
+    # before_action :authenticate_user!
+
     def add_to_cart
       session[:cart] ||= {}
       product_id = params[:product_id]
@@ -7,12 +10,14 @@ class CartController < ApplicationController
       redirect_to view_cart_path, notice: 'Product added to cart successfully'
 
     end
+    
 
     def remove_from_cart
         product_id = params[:id]
         session[:cart].delete(product_id)
         redirect_to view_cart_path, notice: 'Product removed from cart successfully'
     end
+
 
     def update_cart
         product_id = params[:product_id]
@@ -23,4 +28,5 @@ class CartController < ApplicationController
       
       
   end
-  
+
+ 
