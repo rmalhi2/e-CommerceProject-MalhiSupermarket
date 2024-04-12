@@ -30,8 +30,12 @@ class OrdersController < ApplicationController
     def confirm_order
         @order = Order.find(params[:id])
         # Logic to mark the order as confirmed or similar status
-        flash[:notice] = "Order confirmed!"
+        flash[:notice] = "Order placed successfully! We are now processing your order and will notify you about the further details."
         redirect_to root_path
+    end
+
+    def my_orders
+        @orders = current_user.orders.includes(:order_items).order(created_at: :desc)
     end
       
   

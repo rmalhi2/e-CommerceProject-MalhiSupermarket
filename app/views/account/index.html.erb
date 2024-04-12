@@ -15,6 +15,9 @@
   </div>
   <%= f.submit 'Update Address', class: 'btn btn-primary' %>
 
+  <%= link_to 'View My Orders', my_orders_path, class: 'btn btn-primary' %>
+
+
   <% if user_signed_in? %>
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-item nav-link" %></li>
     <% end %>

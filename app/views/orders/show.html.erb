@@ -27,5 +27,6 @@
   </div>
   <%= form_with url: confirm_order_path(@order), method: :post do %>
     <%= submit_tag "Place Order", class: "btn btn-success" %>
+    <%= link_to "Back", :back , class: "btn btn-primary" %>
   <% end %>
 </div>

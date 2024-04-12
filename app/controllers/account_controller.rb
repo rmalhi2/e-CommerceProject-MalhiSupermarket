@@ -18,6 +18,11 @@ class AccountController < ApplicationController
         reset_session
         redirect_to '/', notice: 'Customer information updated successfully.'
     end
+
+    def my_orders
+      @orders = current_user.orders.includes(:order_items).order(created_at: :desc)
+    end
+    
   
     private
   
@@ -25,4 +30,5 @@ class AccountController < ApplicationController
       params.require(:user).permit(:address, :city, :province_id)
     end
   end
+  
   

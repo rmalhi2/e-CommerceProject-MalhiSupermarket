@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   post 'orders/:id/confirm', to: 'orders#confirm_order', as: 'confirm_order'
 
 
+  get 'my_orders', to: 'orders#my_orders', as: :my_orders
+
+
   # devise_for :users
   get '/account', to: 'account#index'
   patch '/account/update_address', to: 'account#update_address', as: 'update_address'
