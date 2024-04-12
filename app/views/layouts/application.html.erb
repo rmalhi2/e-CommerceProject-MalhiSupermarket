@@ -24,49 +24,8 @@
       </div>
     <% end %>
 
-
-    <!--nav-->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <%# <a class="navbar-brand" href="#">Malhi Supermarket</a> %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "About", about_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Products", products_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Categories", categories_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-            <%= link_to "Contact", contact_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Admin", admin_root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "View Cart", view_cart_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'My Account', account_path, class: "nav-link" %>
-        </li>
-
-
-
-
-
-      </ul>
-    </div>
-  </nav>
+    <%= render 'layouts/nav' %> <!-- Rendering the nav view partial -->
+    
     <%= yield %>
 
     <!-- Footer -->
