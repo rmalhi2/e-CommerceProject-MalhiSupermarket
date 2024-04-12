@@ -22,7 +22,6 @@ class AccountController < ApplicationController
     def my_orders
       @orders = current_user.orders.includes(:order_items).order(created_at: :desc)
     end
-    
   
     private
   
