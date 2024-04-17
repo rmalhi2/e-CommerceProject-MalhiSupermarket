@@ -1,4 +1,12 @@
 <div class="container">
+  <nav aria-label="breadcrumb" style="background: none; padding: 0;">
+    <ol class="breadcrumb" style="background: none; margin-bottom: 0; padding: 0.5rem 0;">
+      <li class="breadcrumb-item" style="display: inline;"><%= link_to 'Home', root_path %></li>
+      <li style="display: inline;"> &gt; </li>
+      <li class="breadcrumb-item" style="display: inline;"><%= link_to 'Products', products_path %></li>
+    </ol>
+  </nav>
+
   <h1 class="text-center">Products</h1>
 
   <%= form_tag(products_path, method: "get", class: "form-inline my-2 my-lg-0") do %>

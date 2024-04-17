@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   has_many :order_items
   has_many :products, through: :order_items
   attr_accessor :address, :city, :province_id
+  validates :total, numericality: true
 
   def subtotal
     order_items.sum { |item| item.price * item.quantity }

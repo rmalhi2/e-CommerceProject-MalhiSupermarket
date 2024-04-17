@@ -1,5 +1,9 @@
 class Product < ApplicationRecord
   belongs_to :category
+  validates :product_name, presence: true
+  validates :product_description, presence: true
+  validates :product_price, numericality: true
+  validates :quantity_available, numericality: { only_integer: true }
 
   scope :search_by_keyword_and_category, ->(keyword, category_id) do
     if category_id.present?
