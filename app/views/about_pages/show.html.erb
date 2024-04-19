@@ -1,12 +1,20 @@
-<div class="container mt-4">
+<div class="container mt-4 about-page">
   <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <h1><%= @about_page.title %></h1>
-      <p><%= @about_page.paragraph1 %></p>
+    <div class="col-md-10 offset-md-1 text-center">
+      <h1 class="display-4"><%= @about_page.title %></h1>
+      <p class="lead"><%= @about_page.paragraph1 %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7 offset-md-1 content-paragraphs">
       <p><%= @about_page.paragraph2 %></p>
       <p><%= @about_page.paragraph3 %></p>
       <p><%= @about_page.paragraph4 %></p>
       <p><%= @about_page.paragraph5 %></p>
+    </div>
+    <div class="col-md-3">
+      <%= image_tag('img1.jpg', alt: "Side Image 1", class: "img-fluid rounded mb-3") %>
+      <%= image_tag('img2.jpg', alt: "Side Image 2", class: "img-fluid rounded") %>
     </div>
   </div>
 </div>
