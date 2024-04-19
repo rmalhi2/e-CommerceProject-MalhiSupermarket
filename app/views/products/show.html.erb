@@ -14,6 +14,15 @@
     <div class="col-md-6 offset-md-3">
       <div class="card">
         <div class="card-body">
+          
+          <% if @product.image.attached? %>
+            <div class="product-image">
+              <%= image_tag(@product.image, class: "img-fluid") %>
+            </div>
+          <% else %>
+            <p>No image available.</p>
+          <% end %>
+
           <p class="card-text"><strong>Description:</strong> <%= @product.product_description %></p>
           <p class="card-text"><strong>Price:</strong> <%= number_to_currency(@product.product_price) %></p>
           <p class="card-text"><strong>Quantity Available:</strong> <%= @product.quantity_available %></p>

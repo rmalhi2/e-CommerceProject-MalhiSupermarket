@@ -8,7 +8,7 @@ class AccountController < ApplicationController
     def update_address
       @user = current_user
       if @user.update(user_params)
-        redirect_to "/", notice: 'Address updated successfully.'
+        redirect_to "/", notice: 'Updated successfully.'
       else
         render :index
       end
@@ -26,7 +26,7 @@ class AccountController < ApplicationController
     private
   
     def user_params
-      params.require(:user).permit(:address, :city, :province_id)
+      params.require(:user).permit(:address, :city, :province_id, :avatar)
     end
   end
   

@@ -1,7 +1,12 @@
-<div class="jumbotron text-center" style="background-image: url('/Debian/home/rmalhi/AWD/eCommerceProject/b.jpeg'); background-size: cover; height: 500px;">
-  <h1>Welcome to Malhi Supermarket</h1>
-  <p>Discover a wide range of products for your everyday needs.</p>
-  <a href="<%= products_path %>" class="btn btn-primary btn-lg">Start Shopping</a>
+<div class="text-center" style="position: relative; overflow: hidden;">
+  <%= image_tag("banner.jpg", alt: "Header Banner", style: "width: 100%; max-width: 100%; height: auto; display: block;") %>
+
+  <!-- Content below the image -->
+  <div style="padding: 20px 0;"> <!-- Additional padding for spacing -->
+    <h1>Welcome to Malhi Supermarket</h1>
+    <p>Discover a wide range of products for your everyday needs.</p>
+    <a href="<%= products_path %>" class="btn btn-primary btn-lg">Start Shopping</a>
+  </div>
 </div>
 
 <div class="container text-center">
@@ -21,4 +26,3 @@
     </div>
   </div>
 </div>
-
