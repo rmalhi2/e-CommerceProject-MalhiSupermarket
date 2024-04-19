@@ -1,18 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 $base-color: #333;
 $font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $padding-base: 10px;
@@ -24,10 +10,6 @@ $padding-base: 10px;
 }
 
 body {
-  font: 80% $font-stack;
-  // font-weight: bold;
-  color: $base-color;
-
   header {
     @extend %flex-center;
     background-color: lighten($base-color, 40%);
@@ -52,30 +34,101 @@ body {
 
 }
 
-.btn {
-    padding: $padding-base;
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-  
-    &.btn-primary {
-      background-color: #007bff;
-      color: white; 
-  
-      &:hover {
-        background-color: darken(#007bff, 10%);
-        text-decoration:solid;
+// Define base colors and fonts
+$primary-color: #007bff;  // Bootstrap primary blue
+$dark-color: #343a40;     // Dark gray
+$light-color: #f8f9fa;    // Light gray background
+$accent-color: #ffc107;   // Gold for highlighting important things
+
+$base-font: 'Helvetica Neue', Arial, sans-serif;
+$header-font: 'Georgia', serif;
+
+// General body styles
+body {
+  font-family: $base-font;
+  color: $dark-color;
+  background-color: $light-color;
+}
+
+// Header styles
+header {
+  text-align: center;
+  background-image: linear-gradient(to bottom right, $primary-color, $accent-color);
+  color: white;
+  padding: 2rem 0;
+
+  h1 {
+    font-family: $header-font;
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  // Button styles
+a.btn-primary {
+  background-color: $accent-color !important; // Using a variable for consistency
+  color: white; // Ensuring text color is white
+  border-color: darken($accent-color, 5%) !important; // Darkening for border
+
+  &:hover {
+      background-color: darken($accent-color, 10%) !important;
+      color: white; // Ensure text remains white on hover
+  }
+}
+
+}
+
+.navbar .btn-primary,
+.btn-primary {
+  background-color: $accent-color; // Custom accent color
+  color: white !important; // Force text color to be white
+  border-color: darken($accent-color, 5%);
+
+  &:hover {
+    background-color: darken($accent-color, 10%);
+    color: white !important; // Ensure text color stays white on hover
+  }
+}
+
+// Ensure your button directly in HTML can inherit these styles
+a.btn-primary {
+  color: white !important; // Ensuring color is applied
+}
+
+// Main content styling
+.container {
+  padding: 2rem 0;
+
+  h2 {
+    color: $dark-color;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .row {
+    .col-md-4 {
+      background: white;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        font-size: 1.5rem;
+        color: $primary-color;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: $dark-color;
       }
     }
-  
-    &.btn-lg {
-      padding: $padding-base * 1.5;
-      font-size: 1.25rem;
-    }
   }
+}
+
 
   .about-page {
     .display-4 {
@@ -121,4 +174,871 @@ body {
         font-size: 1.1rem; // Increase the font size for these paragraphs
       }
     }
+}
+
+
+// Product Page Styling
+.products-page {
+  .card {
+    margin-bottom: 20px; // Adds spacing between cards
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); // Subtle shadow for depth
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15); // Enhanced shadow on hover for a lifting effect
+    }
+
+    .card-body {
+      h5 {
+        font-size: 1.25rem; // Larger font size for product names
+        color: $primary-color; // Primary color for product titles
+      }
+
+      .product-image {
+        margin-bottom: 15px; // Space below the product image
+
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 5px; // Rounded corners for images
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        color: $dark-color; // Using dark color for readability
+      }
+
+      .btn-primary {
+        background-color: $accent-color;
+        border: none;
+        &:hover {
+          background-color: darken($accent-color, 10%);
+        }
+      }
+    }
+  }
+
+  .pagination {
+    margin-top: 20px; // Space above pagination links
+    justify-content: center; // Centering pagination components
+
+    li {
+      margin: 0 5px; // Spacing between pagination items
+
+      a, span {
+        color: $primary-color; // Color consistency with primary theme
+        text-decoration: none; // Removing underline from links
+
+        &:hover {
+          text-decoration: underline; // Underline on hover for better user feedback
+        }
+      }
+    }
+  }
+}
+
+// Applying base font styles for consistency
+.products-page {
+  font-family: $base-font;
+}
+
+
+
+
+
+
+
+$light-gray: #f7f7f7;     // Light gray for backgrounds
+$text-dark: #343a40;      // Dark text color for contrast
+$border-radius: 0.25rem;  // Border radius for card and images
+
+.product-show {
+  .breadcrumb {
+    background-color: transparent;  // Ensure the breadcrumb background is transparent
+    padding: 0;
+    margin-bottom: 1rem;  // Space below the breadcrumb
+    li {
+      display: inline;
+      a {
+        color: $primary-color;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .active {
+      color: $text-dark;
+    }
+  }
+
+  h1 {
+    margin-bottom: 2rem;  // Space below the product name
+  }
+
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Subtle shadow for depth
+    border-radius: $border-radius;
+
+    .card-body {
+      .product-image {
+        img {
+          width: 100%;  // Ensure the image takes full width of its container
+          height: auto;
+          border-radius: $border-radius;  // Rounded corners for the image
+          margin-bottom: 1rem;  // Space below the image
+        }
+      }
+
+      p {
+        font-size: 1.1rem;  // Slightly larger font size for readability
+        color: $text-dark;
+        strong {
+          color: darken($text-dark, 20%);  // Darker color for labels
+        }
+      }
+
+      .btn-primary {
+        background-color: $primary-color;
+        border-color: darken($primary-color, 10%);
+        &:hover {
+          background-color: darken($primary-color, 10%);
+          border-color: darken($primary-color, 15%);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.cart-page {
+  .list-group-item {
+    background-color: #fff;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    .row {
+      align-items: center; // Centers items vertically in case of uneven content heights
+
+      .col-md-2 {
+        padding: 0 15px 15px 0; // Space between image and details
+      }
+
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px; // Rounded corners for images
+      }
+    }
+
+    h5 {
+      font-size: 1.25rem; // Larger text for product name
+      color: $primary-color; // Highlight color for titles
+    }
+
+    p {
+      font-size: 1rem; // Standard font size for details
+      color: $dark-color; // Dark color for better readability
+    }
+
+    .form-inline {
+      .form-control {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .btn-sm {
+      padding: 0.25rem 0.5rem;
+    }
+
+    .btn-primary {
+      background-color: $primary-color;
+      border-color: darken($primary-color, 10%);
+    }
+
+    .btn-danger {
+      margin-top: 0.5rem; // Space from the update button
+    }
+  }
+
+  .btn-success {
+    margin-top: 20px; // Space above the proceed to checkout button
+  }
+
+  .alert-info {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+// Shipping Address Form Styling
+// Base and theme colors used in the styling
+$dark-colorr: #343a40; // Dark gray for text
+$light-grayy: #ccc; // Light gray for borders
+$background-color: #f5f5f5; // Soft background color for overall layout
+$heading-color: #204060; // Professional blue for headings
+.shipping-address-form {
+  background-color: #ffffff; // White background for the form area
+  padding: 2rem; // Padding around the form content
+  border-radius: 8px; // Rounded corners for the form container
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); // Subtle shadow for depth
+
+  h3 {
+    color: $heading-color; // Professional blue for the section title
+    font-size: 1.85rem; // Slightly larger font size for headers
+    margin-bottom: 2rem; // Increased space below the header
+  }
+
+  .form-label {
+    font-weight: bold; // Bold font for labels
+    color: $dark-colorr; // Dark color for better readability
+    font-size: 1.1rem; // Slightly larger font size for labels
+    margin-bottom: 0.5rem; // Space below each label
+  }
+
+  .form-control, .form-select {
+    font-size: 1rem; // Standard font size for input fields
+    color: $dark-colorr; // Text color for input content
+    padding: 0.75rem 1.25rem; // Padding inside input fields for better text alignment
+    border: 1px solid $light-grayy; // Border color for inputs
+    border-radius: 0.25rem; // Rounded corners for inputs
+
+    &:focus {
+      border-color: $primary-color; // Highlight focus with primary color
+      box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25); // Glow effect on focus
+    }
+  }
+
+  .btn-primary {
+    background-color: $primary-color; // Background color for buttons
+    border-color: darken($primary-color, 10%); // Slightly darker border for buttons
+    font-size: 1.1rem; // Larger font size for button text
+    padding: 0.75rem 1.5rem; // Padding for a larger click area
+
+    &:hover {
+      background-color: darken($primary-color, 10%); // Darken on hover for interactive feedback
+    }
+  }
+}
+// Ensure that the form is centered in the container
+.shipping_address_container {
+  background-color: $background-color; // Set a light background color for the container
+  padding: 2% 10%; // Provide ample padding around the form
+  border-radius: 8px; // Rounded corners for the container
+}
+
+
+
+
+
+
+
+
+.invoice-page {
+  background-color: #f5f5f9; // Light grey background for better readability
+  padding: 2rem;
+
+  h1, h2 {
+    color: #333; // Dark grey for better visibility
+  }
+
+  .card {
+    background-color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Adds depth with a subtle shadow
+    margin-bottom: 1rem;
+
+    .card-body {
+      display: flex;
+      align-items: center;
+
+      .product-image {
+        width: 100px; // Fixed width for image
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 0.25rem; // Slight rounding of image corners
+        }
+      }
+
+      h5 {
+        font-size: 1.25rem;
+        color: #285580; // Muted blue for a professional look
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666; // Dark grey for text
+      }
+    }
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem; // Adequate padding for a comfortable click area
+    margin-top: 1rem;
+
+    &.btn-success {
+      background-color: #4CAF50; // Green for the success button
+      &:hover {
+        background-color: darken(#4CAF50, 10%);
+      }
+    }
+
+    &.btn-primary {
+      &:hover {
+        background-color: darken(#007bff, 10%);
+      }
+    }
+  }
+}
+
+// Apply the styling specifically to the invoice page container
+.container.invoice-page {
+  max-width: 800px; // Restricting the maximum width for a more centered look
+  margin: auto; // Centering the container
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Targeting only the container class within the navbar
+.navbar .container {
+  padding: 0.5rem 1rem; // Reduced padding for a more compact layout
+
+  @media (min-width: 992px) { // Adjustments for larger screens
+    padding: 0.5rem 2rem; // Slightly more padding on the sides on larger screens
+  }
+}
+
+.navbar {
+  background-color: #ffffff; // Light background for a clean look
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); // Subtle shadow for depth
+  padding: 0.25rem 1rem; // Reduced vertical padding for a slimmer navbar
+
+  .navbar-brand {
+    color: $primary-color; // Brand color for visibility
+    font-weight: bold; // Bold text for the brand
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+
+  .nav-link {
+    color: $dark-color; // Standard link color
+    transition: color 0.3s ease; // Smooth transition for hover effect
+
+    &:hover {
+      color: $primary-color; // Highlight color on hover
+      text-decoration: none; // No underline on hover
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      margin-right: 0.5rem; // Reduced space between menu items
+
+      &:last-child {
+        margin-right: 0; // No extra margin for the last item
+      }
+    }
+  }
+
+  .mr-auto {
+    margin-right: auto; // Automatically aligning these items to the left
+  }
+
+  .ml-auto {
+    margin-left: auto; // Automatically aligning these items to the right
+  }
+}
+// SCSS for Circular Profile Icon
+.profile-icon {
+  width: 30px; // Adjust size as necessary
+  height: 30px; // Adjust size as necessary
+  border-radius: 50%; // Makes the image circular
+  object-fit: cover; // Ensures the image covers the area without being distorted
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4; // Light grey background for contrast
+
+  form {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .field {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: .5rem;
+        color: #666;
+      }
+
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        line-height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block;
+
+        &:focus {
+          outline: none;
+          border-color: #0056b3;
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+      }
+    }
+
+    .actions {
+      text-align: center;
+      
+      input[type="submit"] {
+        background-color: #0056b3;
+        color: white;
+        padding: 10px 15px;
+        font-size: 18px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darken(#0056b3, 10%);
+        }
+      }
+    }
+  }
+
+  .devise-links {
+    text-align: center;
+    margin-top: 10px;
+    
+    a {
+      color: #0056b3;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Base and theme colors
+$light-grayyy: #f7f7f7; // Light background color for forms
+$dark-grayyy: #333; // Text color for better readability
+$border-colorrr: #ccc; // Border color for input fields
+
+.login-container {
+  max-width: 400px; // Restrict the width of the form
+  margin: 2rem auto; // Center the form vertically and horizontally
+  padding: 2rem; // Padding inside the form container
+  background: $light-grayyy; // Background color for the form area
+  border: 1px solid $border-colorrr; // Border for the form
+  border-radius: 8px; // Rounded corners for the form container
+
+  h2 {
+    text-align: center; // Center align the heading
+    color: $dark-grayyy; // Color for the heading
+  }
+
+  .field {
+    margin-bottom: 1rem; // Space between fields
+
+    label {
+      display: block; // Ensure the label is block-level to break line
+      color: $dark-grayyy; // Label text color
+      font-weight: bold; // Make label text bold
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%; // Full width for inputs
+      padding: 8px; // Padding inside inputs
+      border: 1px solid $border-colorrr; // Border for inputs
+      border-radius: 4px; // Rounded borders for inputs
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px; // Space between checkbox and label
+    }
+  }
+
+  .actions {
+    text-align: center; // Center-align buttons
+
+    input[type="submit"] {
+      background-color: $primary-color; // Button background color
+      color: white; // Text color
+      padding: 10px 15px; // Padding inside the button
+      border: none; // Remove border
+      border-radius: 4px; // Rounded corners for the button
+      cursor: pointer; // Pointer cursor on hover
+
+      &:hover {
+        background-color: darken($primary-color, 10%); // Darken button on hover
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.category-container {
+  h1 {
+    text-align: center;
+    color: #334E68; // A more subdued, professional shade of blue.
+    font-weight: 300;
+    margin-bottom: 2rem; // Adds more space under the heading for better visual separation.
+  }
+
+  .list-group {
+    margin-top: 20px;
+
+    .list-group-item {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem; // Increased padding for a more spacious layout.
+      background-color: #ffffff; // Ensures a clean, bright background for each item.
+      border-radius: 0.5rem; // Softly rounded corners for a modern look.
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow for depth.
+
+      &:hover {
+        background-color: #f8f9fa; // A light grey for hover that's easy on the eyes.
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); // Deeper shadow on hover for a "lifted" effect.
+      }
+
+      img {
+        border-radius: 50%; // Keeps the image round.
+        margin-right: 20px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 3px solid #dee2e6; // Adds a border to make images stand out.
+      }
+
+      span {
+        font-size: 1.25rem;
+        color: #495057; // A darker gray for better readability.
+        font-weight: 500; // Slightly bolder text to make category names stand out.
+      }
+    }
+  }
+}
+
+// Responsive adjustments if necessary
+@media (max-width: 768px) {
+  .category-container {
+    .list-group-item {
+      flex-direction: column; // Stacks the image and text vertically on smaller screens.
+      align-items: center;
+      text-align: center;
+
+      img {
+        margin-bottom: 10px; // Adds space between the image and text.
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-container {
+  background: url('contact.jpg') no-repeat center center fixed;
+  background-size: cover; // Ensures the background covers the full viewport
+  height: 100vh; // Sets the height to be 100% of the viewport height
+  min-height: 100%; // Ensures it covers at least the full browser window at all times
+  padding: 60px 0;
+
+  .container {
+    height: 100%; // Makes the inner container also take full viewport height
+    display: flex;
+    align-items: center; // Vertically centers the content within the viewport
+    justify-content: center;
+
+    .row {
+      width: 100%;
+      justify-content: center;
+
+      h1{
+        color:#007bff;
+      }
+
+      li strong{
+        color:#007bff;
+      }
+
+      .col-md-6 {
+        background: rgba(255, 255, 255, 0.8); // Optional: Adds a slight white transparency for better readability
+        padding: 1rem;
+        border-radius: 8px; // Softens the edges of the content area
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); // Enhances depth with a darker shadow
+
+        @media (max-width: 768px) {
+          padding: 20px; // More padding on smaller screens
+        }
+
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    padding: 30px 10px; // Adjust padding for smaller devices
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.my-orders-page {
+  margin: 5%;
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; // Adds space below the heading
+  }
+
+  table {
+    width: 100%; // Full width tables provide better readability
+    margin-top: 20px; // Add space above the table
+    border-collapse: separate; // Allows for spacing between cells
+    border-spacing: 0 10px; // Spacing between rows, 10px vertical spacing
+
+    thead {
+      tr {
+        background-color: #f8f9fa; // Light background for the header for contrast
+        color: #333; // Dark text for better readability
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Add a subtle box shadow to the header
+
+        th {
+          padding: 15px; // Padding inside each header cell
+          text-align: left; // Aligns text to the left
+          font-size: 1rem; // Slightly larger font size
+          border-bottom: 2px solid #dee2e6; // Adds a border below the header for separation
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background-color: #ffffff; // White background for table rows
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Add a subtle box shadow to each row
+
+        &:nth-child(even) {
+          background-color: #f2f2f2; // Zebra striping for even rows
+        }
+
+        td {
+          padding: 15px; // Padding inside each data cell
+          text-align: left; // Aligns text to the left
+          border-bottom: 1px solid #ddd; // Subtle borders between rows
+
+          &:last-child {
+            text-align: right; // Aligns the last column to the right for actions
+          }
+        }
+      }
+    }
+  }
+
+  p {
+    text-align: center; // Center-aligns text when there are no orders
+    color: #666; // Soft text color for empty messages
+    font-size: 1rem; // Standard font size
+    margin-top: 20px; // Space above the text
+  }
+
+  .btn-primary {
+    display: block;
+    width: 200px;
+    margin: 20px auto; // Center button horizontally and add vertical space
+    background-color: #007bff; // Primary button color
+    color: white; // Text color for the button
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px; // Rounded corners for the button
+    text-decoration: none; // No underline for link-styled button
+
+    &:hover {
+      background-color: darken(#007bff, 10%); // Darken on hover for interactive feedback
+    }
+  }
+}
+
+
+
+
+
+
+
+
+.account-details-page {
+  background: #f9f9fa;
+  padding: 40px 0;
+
+  h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .row {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 600px; // Increased width for better layout
+    width: 100%;
+    margin: auto;
+
+    .col-md-6 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar {
+      margin-bottom: 20px;
+    }
+
+    .form-horizontal {
+      width: 100%;
+
+      .form-group {
+        margin-bottom: 15px;
+
+        .control-label {
+          color: #495057;
+          font-size: 1.2rem;
+          margin-bottom: 5px;
+        }
+
+        input, .form-control, .form-select {
+          font-size: 1rem;
+          border-radius: 5px;
+          border: 1px solid #ced4da;
+        }
+
+        .form-control-file {
+          border: none;
+        }
+      }
+
+      .btn-uniform {
+        padding: 12px 20px; // Increased padding for better readability
+        border-radius: 5px;
+        font-size: 1rem; // Check if increasing the font size is necessary
+        margin-right: 5px; // Consistent spacing
+        flex-grow: 1; // Allows buttons to grow to fill the space
+
+        &:hover {
+          background-color: darken(#007bff, 10%);
+        }
+      }
+    }
+  }
 }

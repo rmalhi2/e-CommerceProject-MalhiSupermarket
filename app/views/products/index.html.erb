@@ -1,9 +1,8 @@
-<div class="container">
-  <nav aria-label="breadcrumb" style="background: none; padding: 0;">
-    <ol class="breadcrumb" style="background: none; margin-bottom: 0; padding: 0.5rem 0;">
-      <li class="breadcrumb-item" style="display: inline;"><%= link_to 'Home', root_path %></li>
-      <li style="display: inline;"> &gt; </li>
-      <li class="breadcrumb-item" style="display: inline;"><%= link_to 'Products', products_path %></li>
+<div class="container products-page">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><%= link_to 'Home', root_path %></li>
+      <li class="breadcrumb-item active" aria-current="page">Products</li>
     </ol>
   </nav>
 
@@ -11,7 +10,7 @@
 
   <%= form_tag(products_path, method: "get", class: "form-inline my-2 my-lg-0") do %>
     <%= text_field_tag(:keyword, params[:keyword], class: "form-control mr-sm-2", placeholder: "Search by keyword") %>
-    <%= select_tag(:category_id, options_for_select(Category.all.map { |c| [c.category_name, c.id] }, params[:category_id]), { include_blank: true, class: "form-control mr-sm-2" }) %>
+    <%= select_tag(:category_id, options_for_select(Category.all.map { |c| [c.category_name, c.id] }, params[:category_id]), include_blank: true, class: "form-control mr-sm-2") %>
     <%= submit_tag("Search", class: "btn btn-outline-success my-2 my-sm-0") %>
   <% end %>
 
@@ -23,9 +22,13 @@
             <h5 class="card-title">
               <%= link_to product.product_name, product_path(product) %>
             </h5>
+            <% if product.image.attached? %>
+              <div class="product-image">
+                <%= image_tag(product.image, class: "img-fluid") %>
+              </div>
+            <% end %>
             <p class="card-text">Price: <%= number_to_currency(product.product_price) %></p>
             <%= button_to "Add to Cart", add_to_cart_path(product_id: product.id), method: :post, remote: true, class: "btn btn-primary", form_class: "form-inline", params: { redirect_path: view_cart_path } %>
-
           </div>
         </div>
       </div>

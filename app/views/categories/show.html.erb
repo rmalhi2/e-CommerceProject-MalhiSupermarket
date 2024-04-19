@@ -1,9 +1,14 @@
 <h1 class="text-center"><%= @category.category_name %> Products</h1>
-<div class="container">
+<div class="container products-page">
   <div class="row">
     <% @category.products.each do |product| %>
       <div class="col-md-4 mb-4">
         <div class="card">
+          <% if product.image.attached? %>
+            <div class="product-image">
+              <%= image_tag(product.image, class: "img-fluid") %>
+            </div>
+          <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= link_to product.product_name, product_path(product) %></h5>
             <p class="card-text">Price: <%= number_to_currency(product.product_price) %></p>

@@ -1,27 +1,38 @@
-<div class="container">
+<div class="container cart-page">
   <h1 class="text-center mt-4 mb-4">Shopping Cart</h1>
 
   <% if session[:cart].present? %>
-    <ul class="list-group">
+    <div class="list-group">
       <% session[:cart].each do |product_id, quantity| %>
-        <li class="list-group-item">
-            <% product = Product.find(product_id) %>
-            <h5 class="mb-1"><strong>Product Name:</strong> <%= product.product_name %></h5>
-            <p class="mb-1"><strong>Price:</strong> <%= number_to_currency(product.product_price) %></p>
+        <% product = Product.find(product_id) %>
+        <div class="list-group-item">
+          <% if product.image.attached? %>
+            <div class="row align-items-center">
+              <div class="col-md-2">
+                <%= image_tag(product.image, class: "img-fluid rounded") %>
+              </div>
+              <div class="col-md-10">
+          <% else %>
+            <div class="row align-items-center">
+              <div class="col-md-12">
+          <% end %>
+                <h5 class="mb-1"><strong>Product Name:</strong> <%= product.product_name %></h5>
+                <p class="mb-1"><strong>Price:</strong> <%= number_to_currency(product.product_price) %></p>
 
-            <%= form_tag update_cart_path(product_id), method: :patch, class: "form-inline" do %>
-                <%= hidden_field_tag :product_id, product_id %>
-                <label for="quantity_<%= product_id %>" class="mr-2"><strong>Quantity:</strong></label>
-                <%= number_field_tag "quantity[#{product_id}]", quantity, class: "form-control mr-2", id: "quantity_#{product_id}" %>
-                <%= submit_tag "Update", class: "btn btn-primary btn-sm mr-2" %>
-            <% end %>
+                <%= form_tag update_cart_path(product_id), method: :patch, class: "form-inline" do %>
+                    <%= hidden_field_tag :product_id, product_id %>
+                    <label for="quantity_<%= product_id %>" class="mr-2"><strong>Quantity:</strong></label>
+                    <%= number_field_tag "quantity[#{product_id}]", quantity, class: "form-control mr-2", id: "quantity_#{product_id}" %>
+                    <%= submit_tag "Update", class: "btn btn-primary btn-sm mr-2" %>
+                <% end %>
 
-          <%= button_to "Remove from Cart", remove_from_cart_path(product_id), method: :delete, class: "btn btn-danger btn-sm mt-2" %>
-        </li>
+                <%= button_to "Remove from Cart", remove_from_cart_path(product_id), method: :delete, class: "btn btn-danger btn-sm mt-2" %>
+              </div>
+            </div>
+        </div>
       <% end %>
-    </ul>
-    <%= link_to 'Proceed to Checkout', new_order_path, class: 'btn btn-primary' %>
-
+    </div>
+    <%= link_to 'Proceed to Checkout', new_order_path, class: 'btn btn-success btn-lg mt-4' %>
   <% else %>
     <div class="alert alert-info" role="alert">
       Your shopping cart is empty.

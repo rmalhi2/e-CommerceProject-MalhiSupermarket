@@ -1,11 +1,9 @@
-<div class="container">
-  <nav aria-label="breadcrumb" style="background: none; padding: 0;">
-    <ol class="breadcrumb" style="background: none; margin-bottom: 0; padding: 0.5rem 0;">
-      <li class="breadcrumb-item" style="display: inline;"><%= link_to 'Home', root_path %></li>
-      <li style="display: inline;"> &gt; </li>
-      <li class="breadcrumb-item" style="display: inline;"><%= link_to 'Products', products_path %></li>
-      <li style="display: inline;"> &gt; </li>
-      <li class="breadcrumb-item active" aria-current="page" style="display: inline;"><%= link_to @product.product_name, product_path(@product) %></li>
+<div class="container product-show">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><%= link_to 'Home', root_path %></li>
+      <li class="breadcrumb-item"><%= link_to 'Products', products_path %></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= @product.product_name %></li>
     </ol>
   </nav>
 
@@ -14,7 +12,6 @@
     <div class="col-md-6 offset-md-3">
       <div class="card">
         <div class="card-body">
-          
           <% if @product.image.attached? %>
             <div class="product-image">
               <%= image_tag(@product.image, class: "img-fluid") %>
@@ -22,13 +19,11 @@
           <% else %>
             <p>No image available.</p>
           <% end %>
-
           <p class="card-text"><strong>Description:</strong> <%= @product.product_description %></p>
           <p class="card-text"><strong>Price:</strong> <%= number_to_currency(@product.product_price) %></p>
           <p class="card-text"><strong>Quantity Available:</strong> <%= @product.quantity_available %></p>
           <p><strong>Category:</strong> <%= link_to @product.category.category_name, category_path(@product.category) %></p>
-
-          <%= link_to "Back", :back , class: "btn btn-primary" %>
+          <%= link_to "Back", :back, class: "btn btn-primary" %>
         </div>
       </div>
     </div>

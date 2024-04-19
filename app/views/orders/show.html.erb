@@ -1,8 +1,7 @@
 <div class="container mt-5">
-  <h1 class="mb-4">Invoice</h1>
+  <h1 class="mb-4 text-center">Invoice</h1>
   <div class="card">
     <div class="card-body">
-      
       <p><strong>Address:</strong> <%= @order.user.address %></p>
       <p><strong>City:</strong> <%= @order.user.city %></p>
       <p><strong>Province:</strong> <%= @order.user.province.name if @order.user.province %></p>
@@ -12,9 +11,16 @@
   <h2 class="mt-4 mb-3">Items</h2>
   <% @order.order_items.each do |item| %>
     <div class="card mb-2">
-      <div class="card-body">
-        <h5 class="card-title"><%= item.product.product_name %> - Quantity: <%= item.quantity %></h5>
-        <p class="card-text">Price: <%= number_to_currency(item.price) %></p>
+      <div class="card-body d-flex justify-content-between">
+        <% if item.product.image.attached? %>
+          <div class="product-image mr-3">
+            <%= image_tag(item.product.image, class: "img-fluid", style: "width: 100px; height: auto;") %>
+          </div>
+        <% end %>
+        <div>
+          <h5 class="card-title"><%= item.product.product_name %> - Quantity: <%= item.quantity %></h5>
+          <p class="card-text">Price: <%= number_to_currency(item.price) %></p>
+        </div>
       </div>
     </div>
   <% end %>
@@ -27,6 +33,6 @@
   </div>
   <%= form_with url: confirm_order_path(@order), method: :post do %>
     <%= submit_tag "Place Order", class: "btn btn-success" %>
-    <%= link_to "Back", :back , class: "btn btn-primary" %>
+    <%= link_to "Back", :back, class: "btn btn-primary" %>
   <% end %>
 </div>
